@@ -51,7 +51,7 @@ Specific areas where Copilot was useful:
 
 - **Learning the framework** — Understanding Rails conventions (MVC structure, `before_action`, resource routing, form helpers) on the fly.
 - **Bug diagnosis** — Identifying that `edit` was missing from the `before_action :set_scouting_report` callback, which caused a `NoMethodError` on the edit page.
-- **UI iteration** — Quickly prototyping the dark mode theme and layout, which I then refined to fit the Ravens brand.  I found the following references and used Claude (GitHub Copilot) to recreate something similar for this project:
+- **UI iteration** — Quickly prototyping the dark mode theme and layout, which I then refined to fit the Ravens brand. I found the following references and used GitHub Copilot to recreate something similar for this project:
   - [Sports analytics UI](https://dribbble.com/search/sports-analytics)
   - [Data table design](https://dribbble.com/search/data-table)
   - [Modal / form UI](https://dribbble.com/search/modal-form)
