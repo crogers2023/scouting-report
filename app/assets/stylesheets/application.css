@@ -16,26 +16,9 @@ select {
   border-radius: 6px;
   font-size: 14px;
   color: #e2e2e8;
-  background: #1e1e2a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 12px center;
+  background: #1e1e2a; 
   cursor: pointer;
   box-sizing: border-box;
-}
-
-select:focus {
-  outline: none;
-  border-color: #7c5cbf;
-  box-shadow: 0 0 0 3px rgba(124, 92, 191, 0.2);
-}
-
-select optgroup {
-  font-weight: 700;
-  color: #a0a0b8;
-}
-
-select option {
-  font-weight: 400;
-  color: #e2e2e8;
-  background: #1e1e2a;
 }
 
 select option:disabled {
@@ -107,16 +90,6 @@ tbody tr:hover {
   font-family: inherit;
 }
 
-.field select:focus {
-  outline: none;
-  border-color: #7c5cbf;
-  box-shadow: 0 0 0 2px rgba(124, 92, 191, 0.2);
-}
-
-.field textarea {
-  resize: vertical;
-}
-
 .row {
   display: flex;
   gap: 12px;
@@ -127,13 +100,6 @@ tbody tr:hover {
   min-width: 0;
 }
 
-.section {
-  margin-bottom: 14px;
-  padding: 14px;
-  border: 1px solid #2a2a38;
-  border-radius: 8px;
-  background: #16161f;
-}
 
 .section h4 {
   margin: 0 0 10px;
@@ -154,10 +120,6 @@ tbody tr:hover {
   font-weight: 600;
   cursor: pointer;
   margin-top: 14px;
-}
-
-.btn:hover {
-  background: #3520a8;
 }
 
 .btn:disabled {
@@ -265,7 +227,7 @@ tbody tr:hover {
   margin-bottom: 4px;
 }
 
-.report-field-content {
+/* .report-field-content {
   background: #1e1e2a;
   border-radius: 6px;
   padding: 12px;
@@ -273,7 +235,7 @@ tbody tr:hover {
   font-size: 14px;
   line-height: 1.6;
   color: #c0c0d4;
-}
+} */
 
 /* Show page */
 .show-container {
@@ -322,7 +284,7 @@ tbody tr:hover {
 .show-delete-btn {
   padding: 8px 16px;
   background: #7f1d1d;
-  color: #fca5a5;
+  color: #ffffff;
   border-radius: 6px;
   border: none;
   font-size: 14px;
@@ -346,7 +308,7 @@ tbody tr:hover {
 
 /* Index page */
 .index-container {
-  max-width: 1100px;
+  max-width: 70%;
   margin: 0 auto;
   padding: 32px 24px 48px;
 }
@@ -409,14 +371,12 @@ tbody tr:hover {
   gap: 6px;
   padding: 12px 22px;
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
   color: white;
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
   font-size: 13px;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.15s, transform 0.15s;
 }
 
 .new-btn:hover {
@@ -434,18 +394,10 @@ tbody tr:hover {
 .link-btn {
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  background: #241773;
   color: white;
-  border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
-  transition: background 0.15s;
-}
-
-.link-btn:hover {
-  background: #3520a8;
 }
 
 .empty-state {
@@ -475,8 +427,6 @@ dialog {
   width: 90%;
   max-width: 800px;
   max-height: 90vh;
-  overflow-y: auto;
-  animation: dialog-in 0.2s ease;
   background: #16161f;
 }
 
@@ -504,24 +454,14 @@ dialog::backdrop {
 }
 
 .modal-header h2 {
-  margin: 0;
-  font-size: 20px;
   font-weight: 700;
   color: #9d7fe0;
 }
 
 .modal-close {
   background: #2a2a38;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  color: #a0a0b8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .modal-close:hover {
@@ -530,38 +470,4 @@ dialog::backdrop {
 
 .modal-body {
   padding: 20px;
-}
-
-/* Notices & badges */
-.notice-box {
-  background: #052e16;
-  border-left: 4px solid #10b981;
-  color: #86efac;
-  padding: 14px 16px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.badge {
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 12px;
-  display: inline-block;
-}
-
-.badge-position {
-  background: #1e2a4a;
-  color: #93c5fd;
-}
-
-.badge-type {
-  background: #2a2010;
-  color: #fcd34d;
-}
-
-.badge-league {
-  background: #1a1030;
-  color: #c4b5fd;
 }
