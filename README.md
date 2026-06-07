@@ -40,14 +40,9 @@ Given more time, I'd prioritize the following:
 - **PDF export** — Generate a printable/shareable PDF version of each report.
 - **Grade validation logic** — Enforce that Floor ≤ Expectation ≤ Ceiling and surface a clear error if not.
 - **UI/UX overhaul** — Redesign the interface inspired by modern sports dashboards on [Dribbble](https://dribbble.com). I found the following references and used Claude (GitHub Copilot) to recreate something similar for this project:
-  - [Dark dashboard designs](https://dribbble.com/search/dark-dashboard)
   - [Sports analytics UI](https://dribbble.com/search/sports-analytics)
   - [Data table design](https://dribbble.com/search/data-table)
   - [Modal / form UI](https://dribbble.com/search/modal-form)
-
-  The result was a dark gradient hero header in Ravens purple, a clean table layout with pill badges, and an animated modal for new reports.
-- **Test coverage** — Expand the test suite with model validations, controller specs, and integration tests for the full create/edit flow.
-
 ---
 
 ## AI Tool Usage
