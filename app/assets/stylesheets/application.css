@@ -306,6 +306,15 @@ tbody tr:hover {
   margin-bottom: 16px;
 }
 
+/* Notice Box */
+.notice-box {
+  background: #0f3a2f;
+  color: #6ee7b7;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
 /* Index page */
 .index-container {
   max-width: 70%;
