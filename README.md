@@ -39,10 +39,6 @@ Given more time, I'd prioritize the following:
 - **Filtering & search** — Let users filter reports by player name, position, team, league, or date range.
 - **PDF export** — Generate a printable/shareable PDF version of each report.
 - **Grade validation logic** — Enforce that Floor ≤ Expectation ≤ Ceiling and surface a clear error if not.
-- **UI/UX overhaul** — Redesign the interface inspired by modern sports dashboards on [Dribbble](https://dribbble.com). I found the following references and used Claude (GitHub Copilot) to recreate something similar for this project:
-  - [Sports analytics UI](https://dribbble.com/search/sports-analytics)
-  - [Data table design](https://dribbble.com/search/data-table)
-  - [Modal / form UI](https://dribbble.com/search/modal-form)
 ---
 
 ## AI Tool Usage
@@ -55,7 +51,10 @@ Specific areas where Copilot was useful:
 
 - **Learning the framework** — Understanding Rails conventions (MVC structure, `before_action`, resource routing, form helpers) on the fly.
 - **Bug diagnosis** — Identifying that `edit` was missing from the `before_action :set_scouting_report` callback, which caused a `NoMethodError` on the edit page.
-- **UI iteration** — Quickly prototyping the dark mode theme and layout, which I then refined to fit the Ravens brand.
+- **UI iteration** — Quickly prototyping the dark mode theme and layout, which I then refined to fit the Ravens brand.  I found the following references and used Claude (GitHub Copilot) to recreate something similar for this project:
+  - [Sports analytics UI](https://dribbble.com/search/sports-analytics)
+  - [Data table design](https://dribbble.com/search/data-table)
+  - [Modal / form UI](https://dribbble.com/search/modal-form)
 - **Boilerplate** — Speeding up repetitive tasks so I could focus on the product decisions.
 
 All generated code was reviewed before being kept
