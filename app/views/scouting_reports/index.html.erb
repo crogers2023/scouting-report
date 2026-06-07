@@ -1,0 +1,70 @@
+<% content_for :title, "Scouting reports" %>
+
+<div class="index-container">
+  <% if notice.present? %>
+    <div class="notice-box">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="page-hero">
+    <div class="page-hero-content">
+      <div class="page-hero-brand">
+        <%= image_tag "https://upload.wikimedia.org/wikipedia/en/1/16/Baltimore_Ravens_logo.svg", alt: "Baltimore Ravens", height: 56 %>
+        <div>
+          <h1 class="page-hero-title">Scouting Reports</h1>
+          <p class="page-hero-sub">Baltimore Ravens — Player Evaluation Hub</p>
+        </div>
+      </div>
+      <button class="new-btn" onclick="document.getElementById('new-report-modal').showModal()">+ New Report</button>
+    </div>
+  </div>
+
+  <% if @scouting_reports.any? %>
+    <div class="table-container">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Position</th>
+              <th>Team</th>
+              <th>Report Type</th>
+              <th>League</th>
+              <th>Created Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @scouting_reports.each do |scouting_report| %>
+              <tr>
+                <td><strong><%= scouting_report.fullname %></strong></td>
+                <td><span class="badge badge-position"><%= scouting_report.position %></span></td>
+                <td><%= scouting_report.team %></td>
+                <td><span class="badge badge-type"><%= scouting_report.reporttype %></span></td>
+                <td><span class="badge badge-league"><%= scouting_report.reportleague %></span></td>
+                <td><%= scouting_report.created_at.strftime("%b %d, %Y") %></td>
+                <td><%= link_to "View", scouting_report, class: "link-btn" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      <div class="empty-state-icon">📋</div>
+      <h3>No scouting reports yet</h3>
+    </div>
+  <% end %>
+</div>
+
+<dialog id="new-report-modal">
+  <div class="modal-header">
+    <h2>New Scouting Report</h2>
+    <button class="modal-close" onclick="document.getElementById('new-report-modal').close()">✕</button>
+  </div>
+  <div class="modal-body">
+    <%= render "form", scouting_report: @new_scouting_report %>
+  </div>
+</dialog>

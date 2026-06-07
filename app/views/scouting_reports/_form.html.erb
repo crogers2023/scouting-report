@@ -1,0 +1,108 @@
+<div class="form-container">
+  <%= form_with(model: scouting_report) do |form| %>
+    <% if scouting_report.errors.any? %>
+      <div class="error-box">
+        <p><%= pluralize(scouting_report.errors.count, "error") %> found:</p>
+        <ul>
+          <% scouting_report.errors.each do |e| %><li><%= e.full_message %></li><% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="section">
+      <h4>Report Details</h4>
+      <div class="row">
+        <div class="field">
+          <%= form.label :reportleague, "League *" %>
+          <%= form.select :reportleague, [["Select league", "", { disabled: true }], ["NFL", "NFL"], ["NCAA", "NCAA"], ["CFL", "CFL"], ["UFL", "UFL"]], {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :reporttype, "Report Type *" %>
+          <%= form.select :reporttype, [["Select type", "", { disabled: true }], ["Game", "Game"], ["Practice", "Practice"]], {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :reportdate, "Date *" %>
+          <%= form.date_field :reportdate, max: Date.today, required: true %>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Player Information</h4>
+      <div class="field">
+        <%= form.label :fullname, "Full Name *" %>
+          <%= form.text_field :fullname, required: true %>
+      </div>
+      <div class="row">
+        <div class="field">
+          <%= form.label :position, "Position *" %>
+          <%= form.select :position,
+                grouped_options_for_select({
+                  "Offense"       => ["QB","RB","FB","WR","TE","LT","LG","C","RG","RT"],
+                  "Defense"       => ["DE","DT","NT","OLB","MLB","ILB","CB","FS","SS","DB"],
+                  "Special Teams" => ["K","P","LS","KR","PR"]
+                }, scouting_report.position),
+                { include_blank: ["Select position", "", { disabled: true }] }, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :team, "Team" %>
+          <%= form.text_field :team %>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Grade Projection</h4>
+      <div class="row">
+        <div class="field">
+          <%= form.label :floor, "Floor *" %>
+          <%= form.select :floor, [["Select", "", { disabled: true }]] + ScoutingReport::GRADES.map { |g| [g, g] }, {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :expectation, "Expectation *" %>
+          <%= form.select :expectation, [["Select", "", { disabled: true }]] + ScoutingReport::GRADES.map { |g| [g, g] }, {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :ceiling, "Ceiling *" %>
+          <%= form.select :ceiling, [["Select", "", { disabled: true }]] + ScoutingReport::GRADES.map { |g| [g, g] }, {}, { required: true } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h4>Performance Ratings (A-F)</h4>
+      <div class="row">
+        <div class="field">
+          <%= form.label :speed_rating, "Speed *" %>
+          <%= form.select :speed_rating, [["Select", "", { disabled: true }]] + ScoutingReport::RATINGS.map { |r| [r, r] }, {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :strength_rating, "Strength *" %>
+          <%= form.select :strength_rating, [["Select", "", { disabled: true }]] + ScoutingReport::RATINGS.map { |r| [r, r] }, {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :iq_rating, "Football IQ *" %>
+          <%= form.select :iq_rating, [["Select", "", { disabled: true }]] + ScoutingReport::RATINGS.map { |r| [r, r] }, {}, { required: true } %>
+        </div>
+        <div class="field">
+          <%= form.label :effort_rating, "Effort/Motor *" %>
+          <%= form.select :effort_rating, [["Select", "", { disabled: true }]] + ScoutingReport::RATINGS.map { |r| [r, r] }, {}, { required: true } %>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <%= form.label :reporttext, "Overall Impressions" %>
+      <%= form.textarea :reporttext, rows: 4 %>
+    </div>
+    <div class="field">
+      <%= form.label :scouting_questions, "Questions" %>
+      <%= form.textarea :scouting_questions, rows: 3 %>
+    </div>
+    <div class="field">
+      <%= form.label :notes, "Notes" %>
+      <%= form.textarea :notes, rows: 3 %>
+    </div>
+
+    <%= form.submit "Submit Report", class: "btn" %>
+  <% end %>
+</div>

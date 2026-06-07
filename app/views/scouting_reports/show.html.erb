@@ -1,0 +1,17 @@
+<% content_for :title, @scouting_report.fullname %>
+
+<div class="show-container">
+  <div class="show-header">
+    <%= link_to "← Back to reports", scouting_reports_path, class: "show-back-link" %>
+    <div class="show-actions">
+      <%= link_to "Edit", edit_scouting_report_path(@scouting_report), class: "show-edit-link" %>
+      <%= button_to "Delete", @scouting_report, method: :delete, class: "show-delete-btn", form: { data: { turbo_confirm: "Delete this scouting report?" } } %>
+    </div>
+  </div>
+
+  <% if notice.present? %>
+    <div class="show-notice"><%= notice %></div>
+  <% end %>
+
+  <%= render @scouting_report %>
+</div>

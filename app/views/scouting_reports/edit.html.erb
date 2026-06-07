@@ -1,0 +1,10 @@
+<% content_for :title, "Edit #{@scouting_report.fullname}" %>
+
+<div style="max-width:700px; margin:0 auto; padding:24px; font-family:system-ui, sans-serif;">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+    <h1 style="margin:0; font-size:22px; font-weight:700;">Edit Scouting Report</h1>
+    <%= link_to "← Back", scouting_report_path(@scouting_report), style: "color:#2563eb; text-decoration:none; font-size:14px;" %>
+  </div>
+
+  <%= render "form", scouting_report: @scouting_report %>
+</div>

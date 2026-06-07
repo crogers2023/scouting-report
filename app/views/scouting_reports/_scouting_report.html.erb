@@ -1,0 +1,56 @@
+<div id="<%= dom_id scouting_report %>" class="report-container">
+  <div class="report-header">
+    <h2><%= scouting_report.fullname %></h2>
+    <span class="report-header-subtitle">
+      <%= [scouting_report.position, scouting_report.team].select(&:present?).join(" · ") %>
+    </span>
+  </div>
+  <div class="report-meta">
+    <%= [scouting_report.reportleague, scouting_report.reporttype, scouting_report.reportdate&.strftime("%B %d, %Y")].select(&:present?).join(" · ") %>
+  </div>
+
+  <div class="report-section report-grade-section">
+    <h4>Grade Projection</h4>
+    <div class="report-grades-container">
+      <% ScoutingReport::GRADE_FIELDS.each do |attr, label| %>
+        <div class="report-grade-item">
+          <div class="report-grade-label"><%= label %></div>
+          <div class="report-grade-value"><%= scouting_report.send(attr).presence || "—" %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="report-section report-ratings-section">
+    <h4>Performance Ratings</h4>
+    <div class="report-ratings-container">
+      <% ScoutingReport::RATING_FIELDS.each do |attr, label| %>
+        <div class="report-rating-item">
+          <div class="report-rating-label"><%= label %></div>
+          <div class="report-rating-value"><%= scouting_report.send(attr).presence || "—" %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <% if scouting_report.reporttext.present? %>
+    <div class="report-field">
+      <div class="report-field-label">Overall Impressions</div>
+      <div class="report-field-content"><%= scouting_report.reporttext %></div>
+    </div>
+  <% end %>
+
+  <% if scouting_report.scouting_questions.present? %>
+    <div class="report-field">
+      <div class="report-field-label">Questions</div>
+      <div class="report-field-content"><%= scouting_report.scouting_questions %></div>
+    </div>
+  <% end %>
+
+  <% if scouting_report.notes.present? %>
+    <div class="report-field">
+      <div class="report-field-label">Notes</div>
+      <div class="report-field-content"><%= scouting_report.notes %></div>
+    </div>
+  <% end %>
+</div>
