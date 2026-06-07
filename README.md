@@ -18,8 +18,8 @@ A Ruby on Rails application for creating and managing NFL scouting reports.
 # Clone the repo and install dependencies
 bundle install
 
-# Set up the database (create, migrate, and optionally seed)
-bin/rails db:create db:migrate db:seed
+# Set up the database (create, migrate)
+bin/rails db:create db:migrate
 
 # Start the development server
 bin/rails server
@@ -27,7 +27,7 @@ bin/rails server
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-> The app uses SQLite by default — no external database setup required.
+App uses SQLite by default
 
 ---
 
@@ -40,12 +40,10 @@ Given more time, I'd prioritize the following:
 - **PDF export** — Generate a printable/shareable PDF version of each report.
 - **Grade validation logic** — Enforce that Floor ≤ Expectation ≤ Ceiling and surface a clear error if not.
 - **UI/UX overhaul** — Redesign the interface inspired by modern sports dashboards on [Dribbble](https://dribbble.com). I found the following references and used Claude (GitHub Copilot) to recreate something similar for this project:
-  - [Dark dashboard designs](https://dribbble.com/search/dark-dashboard)
   - [Sports analytics UI](https://dribbble.com/search/sports-analytics)
   - [Data table design](https://dribbble.com/search/data-table)
   - [Modal / form UI](https://dribbble.com/search/modal-form)
 
-  The result was a dark gradient hero header in Ravens purple, a clean table layout with pill badges, and an animated modal for new reports.
 - **Test coverage** — Expand the test suite with model validations, controller specs, and integration tests for the full create/edit flow.
 
 ---
