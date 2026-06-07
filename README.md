@@ -19,10 +19,10 @@ A Ruby on Rails application for creating and managing NFL scouting reports.
 bundle install
 
 # Set up the database (create, migrate)
-bin/rails db:create db:migrate
+ruby bin/rails db:create db:migrate
 
 # Start the development server
-bin/rails server
+ruby bin/rails server
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
