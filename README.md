@@ -52,7 +52,7 @@ Given more time, I'd prioritize the following:
 
 ## AI Tool Usage
 
-I came into this project without prior Rails experience and used Copilot as both a learning tool and a pair programmer. First I read documentation and watched a few tutorial videos before writing a line of code, then I used Copilot to understand Rails conventions as I went — asking it to explain patterns like `before_action`, resource routing, and partials in the context of what I was actually building.
+I came into this project without prior Rails experience and used Copilot as both a learning tool and a pair programmer. First I read documentation and watched a few tutorial videos before writing a line of code, then I used Copilot to understand Rails conventions as I went. I would ask it to explain patterns like `before_action`, resource routing, and partials in the context of what I was actually building.
 
 The decisions I focused on were the ones that didn't require Rails knowledge: how to model a scouting report, what fields matter to a scout, whether validation should live on the client or server, and how to structure the grade projection as floor/expectation/ceiling rather than a single value.
 
